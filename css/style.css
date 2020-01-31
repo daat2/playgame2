@@ -1,72 +1,206 @@
-
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300"); 
+ header{
+     margin:0;
+ }
+/* Background pattern from Toptal Subtle Patterns */
 body{  
     background:url("../assets/images/vintage-concrete.png");
 background-repeat: no repeat;
 background-size :cover;
 }
-
-
-.wrapper{
-  position: relative;
-  width:640px;
-  margin:0 auto;
-  
-}
-.back{
-  position: absolute;
-  top:70px;
-  width:640px;
-  height: 640px;
-  z-index:0;
-  background-color: #000;
-  border-radius: 310px;
-  box-shadow: 10px 10px 5px -22px;
+.container{
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    
 }
 
 
-.pad {
-  width: 300px;
+
+h1{ 
+    font-size: 100px;
+}
+
+.gameboard{
+    margin:0 auto;
+    margin-top:10px;
+    padding:0px;
+    border: 10px  solid  black;
+    width:640px;
+    height:640px;
+    z-index: 1;
+    border-radius:640px;
+    background-clip: border-box;
+    background-color: black;
+     /* filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70); 
+   -moz-opacity: 0.7; 
+  opacity:  0.7; */
+    
+}
+
+.game-console{
+ position: absolute;
+ border: 15px solid black;
+  height: 250px;
+  width: 250px;
+  border-radius: 145px;
+  background-color: gray;
+  clear: both;
+  z-index: 10;
+  margin-top: 195px;
+  margin-left: 195px;
+}
+.button{
+width: 300px;
   height: 300px;
+  cursor: pointer;
   float: left;
   z-index: 1;
   margin: 10px;
-  opacity: 1.0;
   
-}
-.shape1 {
-  border-top-left-radius: 300px;
-  background-color: green;
+ 
+  }
+      
+
+   .blue {
+
+    background-color:rgb(26, 0, 170);
+    border-top-left-radius: 300;
+    -moz-border-radius: 300px 0 0 0;
+    border-radius: 300px 0 0 0;    
 }
 
-.shape2 {
+.blue-active {
+  background-color:  lightblue !important;
+}
+
+.yellow {
+  background-color: yellow;
   float: left;
   border-top-right-radius: 300px;
-  background-color: red;
+  -moz-border-radius: 0 300px 0 0;
+  border-radius: 0 300px 0 0;
   clear: right;
 }
-.shape3 {
-  float: left;
+
+
+.yellow-active {
+  background-color: lightgoldenrodyellow !important;
+}
+
+.green {
+  background-color: green;
   border-bottom-left-radius: 300px;
-  background-color: yellow;
+  
   clear: left;
 }
 
-.shape4 {
-  float: left;
-  border-bottom-right-radius: 300px;
-  background-color: blue;
+.green-active {
+  background-color:	lightgreen  !important;
 }
 
-.circle {
+.orange {
+  background-color: orange;
+  border-bottom-right-radius: 300px;
+    float: left;
+}
+
+.orange-active {
+  background-color: lightsalmon!important;
+
+}
+.title {
+  font-size: 30px;
+  margin-top: auto;
+  margin-bottom:  30px;
+  font-weight: 900;
+}
+
+.inline {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.counter {  
+  border: solid 2px black;
+  border-radius: 30px;
+  color:hotpink;
+  width:50px;
+  height:50px;
+  font-size: 40px;
+  background-color: #522842;
+}
+
+.start {
+  text-align: center;
+  margin: 0 auto;
+  margin-left: 20px;
+  border: solid 4px black;
+  width:55px;
+  height: 45px;
+  border-radius:30px;
+  color: black;
+  line-height: 55px;
+}
+
+.start {  
+  background-color: rgb(223, 57, 57);
+}
+
+ .strict{
+  background-color: rgb(206, 168, 41);
+}
+
+.switch-box {
+  margin-top: 10px;
+}
+
+.outter-switch {
+  border: solid 2px black;
+  width:60px;
+  height: 25px;
+  background-color: black;  
+}
+
+.outter-active {
+  background-color: black !important;
+}
+
+.inner-switch {
+  background-color: whitesmoke;
+  width: 30px;
+  height: 25px;
+  position: relative !important;
+}
+
+.inner-inactive {
+  background-color: black !important;
+}
+
+.icon{
+width: 25%;
+height: 25%;
+position: absolute;
+border-radius: 25%;
+}
+.call{
+    width: 25%;
+    height: 25%;
+    position: absolute;
+
+    
+    }
+
+
+ 
+ 
+/* .circle {
   position: absolute;
-  top: 195px;
-  left: 195px;
+  top: 200px;
+  left: 200px;
   width: 250px;
   height: 250px;
-  background: #000;
-  border-radius: 125px;
-  z-index: 10;
-}
-
-
-
+  background:white;
+  border-radius: 250px;
+  z-index: 6;
+} */
