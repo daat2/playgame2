@@ -147,11 +147,11 @@ width: 300px;
   background-color: rgb(223, 57, 57);
 }
 
- .strict{
+ /* .strict{
   background-color: rgb(206, 168, 41);
-}
+} */
 
-.switch-box {
+/* .switch-box {
   margin-top: 10px;
 }
 
@@ -175,7 +175,7 @@ width: 300px;
 
 .inner-inactive {
   background-color: black !important;
-}
+} */
 
 .icon{
 width: 25%;

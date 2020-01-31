@@ -16,8 +16,10 @@ const green = document.querySelector('#shapeY');
 const orange = document.querySelector('#shapeG');
 const yellow = document.querySelector('#shapeO');
 const start = document.querySelector('.start');
+const strict = document.querySelector('strict');
+
 start.addEventListener('click', (event) => {
-      $(".counter").text("01");
+      $(".counter").text("00");
         let number = generateRandomNumber()
     game.playSequence.push(number)
     play(game.playSequence)
