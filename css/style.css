@@ -143,13 +143,31 @@ width: 300px;
   line-height: 55px;
 }
 
-.start {  
+.start  {  
   background-color: rgb(223, 57, 57);
 }
 
- /* .strict{
-  background-color: rgb(206, 168, 41);
-} */
+
+
+.strict{
+text-align: center;
+margin: 0 auto;
+margin-left: 20px;
+border: solid 4px black;
+width:100px;
+height: 45px;
+border-radius:50px;
+color: black;
+line-height: 55px;
+
+
+}
+
+ .strict{
+  background-color: whitesmoke
+   
+
+}
 
 /* .switch-box {
   margin-top: 10px;
