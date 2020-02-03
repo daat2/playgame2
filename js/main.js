@@ -2,8 +2,8 @@ const game = {
     userSequence: [], //array containing the generated/random button
     playSequence: [], //array containing the users selected button
     numLevels: 20
-     
-};
+
+     };
 const boardSound = [
     "https://freesound.org/data/previews/151/151022_1838182-lq.mp3",    // blue button
     "https://freesound.org/data/previews/156/156859_2538033-lq.mp3",	// yellow button
@@ -16,14 +16,34 @@ const green = document.querySelector('#shapeY');
 const orange = document.querySelector('#shapeG');
 const yellow = document.querySelector('#shapeO');
 const start = document.querySelector('.start');
-const strict = document.querySelector('strict');
 
+// let strict = false;
+// let error = false;
+// let flash;
+// let okay ; 
+// let noise = true;
+
+$(document).ready(function(){	
+    						
+     
+      $(".counter").text("00");
 start.addEventListener('click', (event) => {
-    $("counter"). text("");
-    strict =false;
-    error =false;
-    level =0;
-    level ++;
+     let number = generateRandomNumber()
+    game.playSequence.push(number)
+    play(game.playSequence)
+});
+function generateRandomNumber(){
+    return Math.floor(Math.random() * 4)
+}
+    
+    
+
+
+    // $("counter"). text("");
+    // strict =false;
+    // error =false;
+    //  level =0;
+    // level ++;
 
 //       $(".counter").text("00");
 //         let number = generateRandomNumber()
