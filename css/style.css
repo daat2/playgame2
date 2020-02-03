@@ -149,7 +149,7 @@ width: 300px;
 
 
 
-.strict{
+.mode{
 text-align: center;
 margin: 0 auto;
 margin-left: 20px;
@@ -163,7 +163,7 @@ line-height: 55px;
 
 }
 
- .strict{
+ .mode {
   background-color: whitesmoke
    
 
