@@ -24,18 +24,38 @@ let flash;
 let okay ; 
 let noise = true;
 
+strictButton.addEventListener('click' ,(event) => {
+    if (strictButton.checked ==true)
+    {        strict = true;
+     } else {
+              strict = false;
 
-                         
+            }
+        });
+    
+
+
+
+// function play(sequence){
+//     sequence.forEach(function (number) {
+//         let [button, sound, className] = derive(number)
+//         button.classList.add(className)
+//         new Audio(sound).play()
+//     })
+// }
+
+    
+
    
-start.addEventListener('click', (event) => {
-     $(".counter").text("00");
-     let number = generateRandomNumber()
-    game.playSequence.push(number)
-    play(game.playSequence)
-});
-function generateRandomNumber(){
-    return Math.floor(Math.random() * 4)
-}
+// start.addEventListener('click', (event) => {
+//      $(".counter").text("00");
+//      let number = generateRandomNumber()
+//     game.playSequence.push(number)
+//     play(game.playSequence)
+// });
+// function generateRandomNumber(){
+//     return Math.floor(Math.random() * 4)
+// }
     
 // function derive(number){
 //     switch(number){
