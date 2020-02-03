@@ -16,100 +16,19 @@ const green = document.querySelector('#shapeY');
 const orange = document.querySelector('#shapeG');
 const yellow = document.querySelector('#shapeO');
 const start = document.querySelector('.start');
-const strictButton= document.querySelector('#strict')
+const strict = document.querySelector('#strict')
 
-let strict = false;
-let error = false;
-let flash;
-let okay ; 
-let noise = true;
+// let strict = false;
+// let error = false;
+// let flash;
+// let pass ; 
+// let noise = true;
 
-strictButton.addEventListener('click' ,(event) => {
-    if (strictButton.checked ==true)
-    {        strict = true;
-     } else {
-              strict = false;
+var simon={
+    sendcolor: function(color){
 
-            }
-        });
-    
-
-
-
-// function play(sequence){
-//     sequence.forEach(function (number) {
-//         let [button, sound, className] = derive(number)
-//         button.classList.add(className)
-//         new Audio(sound).play()
-//     })
-// }
-
-    
-
-   
-// start.addEventListener('click', (event) => {
-//      $(".counter").text("00");
-//      let number = generateRandomNumber()
-//     game.playSequence.push(number)
-//     play(game.playSequence)
-// });
-// function generateRandomNumber(){
-//     return Math.floor(Math.random() * 4)
-// }
-    
-// function derive(number){
-//     switch(number){
-//         case 0:
-//             return [blue, boardSound[0], "blue-active"]
-//         case 1:
-//             return [green, boardSound[1], "green-active"]
-//         case 2:
-//             return [orange, boardSound[2], "orange-active"]
-//         case 3:
-//             return [yellow, boardSound[3], "yellow-active"]
-//     }
-// }
-// function play(sequence){
-//     sequence.forEach(function (number) {
-//         let [button, sound, className] = derive(number)
-//         button.classList.add(className)
-//         new Audio(sound).play()
-//     })
-// }
-
-    
-
-
-    // $("counter"). text("");
-    // strict =false;
-    // error =false;
-    //  level =0;
-    // level ++;
-
-//       $(".counter").text("00");
-//         let number = generateRandomNumber()
-//     game.playSequence.push(number)
-//     play(game.playSequence)
-// });
-// function generateRandomNumber(){
-//     return Math.floor(Math.random() * 4)
-// }
-// function derive(number){
-//     switch(number){
-//         case 0:
-//             return [blue, boardSound[0], "blue-active"]
-//         case 1:
-//             return [green, boardSound[1], "green-active"]
-//         case 2:
-//             return [orange, boardSound[2], "orange-active"]
-//         case 3:
-//             return [yellow, boardSound[3], "yellow-active"]
-//     }
-// }
-// function play(sequence){
-//     sequence.forEach(function (number) {
-//         let [button, sound, className] = derive(number)
-//         button.classList.add(className)
-//         new Audio(sound).play()
-//     })
-// }
+    }
+};
+$(document).ready(function(){
+   $("#shapeB").click (function(){simon.sendcolor(blue) });
+})
