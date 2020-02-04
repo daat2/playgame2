@@ -3,7 +3,7 @@ const game = {
     playSequence: [], //array containing the users selected button
     numLevels: 20
 
-     };
+};
 const boardSound = [
     "https://freesound.org/data/previews/151/151022_1838182-lq.mp3",    // blue button
     "https://freesound.org/data/previews/156/156859_2538033-lq.mp3",	// yellow button
@@ -18,17 +18,18 @@ const yellow = document.querySelector('#shapeO');
 const start = document.querySelector('.start');
 const strict = document.querySelector('#strict')
 
-// let strict = false;
-// let error = false;
-// let flash;
-// let pass ; 
-// let noise = true;
 
-var simon={
-    sendcolor: function(color){
+let game ={
 
-    }
+  strict : false,
+   wrong :false,
+   turn : 0,
+  noise : true ,
+  
+
 };
-$(document).ready(function(){
-   $("#shapeB").click (function(){simon.sendcolor(blue) });
-})
+
+start.addEventListener('click', (event) => {
+    $(".counter").text("01");
+
+});
