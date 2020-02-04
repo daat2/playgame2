@@ -1,6 +1,6 @@
 const game = {
     userSequence: [], //array containing the user selected button
-    playSequence: [], //array containing simon random button
+    playSequence: [0,2,1], //array containing simon random button
     numLevels: 20
 
 };
@@ -31,23 +31,49 @@ const strict = document.querySelector('#strict');
 
 // start.addEventListener('click', (event) => { 
 //     $(".counter").text("01");
+/* 1 start board sequence */
+
+
+let id,color,level=0;
 
 $(document).ready(function () {
     $(".start").click(function () {
         level++;
-        startSequence();
+       playSequence(); //start
 
     })
+//user button listner //
+$(".button").click(function(){
+    id =$(this).attr("id");
+    color =$(this).attr("class").split("")[1];
+    userSequence.push(id);
+    console.log (id+""+color);
+    addClassSound(id,color);
+
+    //check user sequence 
+
+    if (!userCorrect()){
+
+    }
+//check end of sequence
+    if (userSequence.lenght ==playSequence.lenght){
+        level++;
+        userSequence=[];
+        playSequence=[];
+
+    }
+})
 
 })
-/*playSequence */
-function startSequence() {
+/* 2 playSequence */
+function playSequence() { //start
     $(".counter").text(level);
-    getRandomNumber();
+    // getRandomNumber();
     var i = 0;
     var myInterval = setInterval(function () {
         id = playSequence[i];
         color = $("#+id").attr("class").split(" ")[id];
+        console.log(id+" "+ color);
         addClassSound(id, color);
         i++;
     }, 1000);
@@ -56,7 +82,7 @@ function startSequence() {
         i = 0;
     clearInterval(myInterval);
 }
-/*generate random number */
+/* 3 generate random number */
 function getRandomNumber() {
     var random = math.floor(math.random() * 4);
     playSequence.push(random);
