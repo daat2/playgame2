@@ -51,9 +51,10 @@ $(".button").click(function(){
     addClassSound(id,color);
 
     //check user sequence 
-
-    if (!userCorrect()){
-
+//usercorrect
+    if (!checkUserSeq()) { 
+displayWrong();
+userSequence =[];
     }
 //check end of sequence
     if (userSequence.lenght ==playSequence.lenght){
@@ -65,6 +66,35 @@ $(".button").click(function(){
 })
 
 })
+
+//checking user sequence aginst playsequence
+
+function checkUserSeq () {
+    for(var i=0;1 < userSequenc.lenght; i++){
+        if (userSequence[i] != playSequence[i]){
+                return false;
+        }
+    }
+    return true;
+}
+
+//display error f
+function displaywrong() {
+console.log("WRG");
+var counter =0 ;
+var amWrong = setInterval(fuction(), {
+    $(".counter").text(WRG);
+    count++;
+    if(count== 3){
+$(".counter").text(level);
+
+clearInterval();
+userSequenc=[]
+count=0;
+ }
+}, 500);
+};
+
 /* 2 playSequence */
 function playSequence() { //start
     $(".counter").text(level);
