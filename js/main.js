@@ -1,6 +1,6 @@
 const game = {
     userSequence: [], //array containing the user selected button
-    playSequence: [0,2,1], //array containing simon random button
+    playSequence: [], //array containing simon random button
     numLevels: 20
 
 };
@@ -39,24 +39,29 @@ $(document).ready(function () {
 //user button listner //
 $(".button").click(function(){
     id =$(this).attr("id");
-    color =$(this).attr("class").split("")[shapeB];
+    color =$(this).attr("class").split("")[1];
     userSequence.push(id);
-    console.log (id+""+color);
+    console.log (id+" "+color);
     addClassSound(id,color);
 
     //check user sequence 
 //usercorrect
     if (!checkUserSeq()) { 
-displayWrong();
+displayErr();
 userSequence =[];
     }
 //check end of sequence
-    if (userSequence.lenght ==playSequence.lenght){
+    if (userSequence.lenght ==playSequence.lenght && userSeq.length<
+        numLevels){
         level++;
         userSequence=[];
         playSequence=[];
 
     }
+    // check for winners
+if (userSeq.length==numLevels) {
+    $(."display").text("win");
+}
 })
 
 })
@@ -73,15 +78,15 @@ function checkUserSeq () {
 }
 
 //display error f
-function displayErr() {
+function displayError() {
 console.log("Err");
-var counter =0 ;
-var myInterval = setInterval(fuction(), {
-    $(".counter").text("Err");
-    count++;
+var count =0 ;
+var myError = setInterval(fuction(), {
+    $(".counter").text("Err"),
+        count++;
+}
     if(count== 3){
 $(".counter").text(level);
-
 clearInterval();
 userSequenc=[]
 count=0;
@@ -122,8 +127,10 @@ function addClassSound(id, color) {
     },500);
 /* play board sound  */
 function playSound(id) {
-    var sound =new Audio(boardSound)[id];
+    var sound =new Audio(boardSound [id]);
     sound.play();
 
 }
-};
+}
+
+
