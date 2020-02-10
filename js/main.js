@@ -19,15 +19,7 @@ const start = document.querySelector('.start');
 const strict = document.querySelector('#strict');
 
 
-// let game ={
 
-//   strict : false,
-//    wrong :false,
-//    turn : 0,
-//   noise : true ,
-
-
-// };
 
 // start.addEventListener('click', (event) => { 
 //     $(".counter").text("01");
@@ -35,6 +27,8 @@ const strict = document.querySelector('#strict');
 
 
 let id,color,level=0;
+
+let error =false;
 
 $(document).ready(function () {
     $(".start").click(function () {
@@ -45,7 +39,7 @@ $(document).ready(function () {
 //user button listner //
 $(".button").click(function(){
     id =$(this).attr("id");
-    color =$(this).attr("class").split("")[1];
+    color =$(this).attr("class").split("")[shapeB];
     userSequence.push(id);
     console.log (id+""+color);
     addClassSound(id,color);
@@ -79,11 +73,11 @@ function checkUserSeq () {
 }
 
 //display error f
-function displaywrong() {
-console.log("WRG");
+function displayErr() {
+console.log("Err");
 var counter =0 ;
-var amWrong = setInterval(fuction(), {
-    $(".counter").text(WRG);
+var myInterval = setInterval(fuction(), {
+    $(".counter").text("Err");
     count++;
     if(count== 3){
 $(".counter").text(level);
@@ -97,6 +91,7 @@ count=0;
 
 /* 2 playSequence */
 function playSequence() { //start
+    console.log(level);
     $(".counter").text(level);
     // getRandomNumber();
     var i = 0;
@@ -106,11 +101,12 @@ function playSequence() { //start
         console.log(id+" "+ color);
         addClassSound(id, color);
         i++;
-    }, 1000);
-
-    if (i == playSequence.length)
+         if (i == playSequence.length)
         i = 0;
     clearInterval(myInterval);
+    }, 1000);
+
+   
 }
 /* 3 generate random number */
 function getRandomNumber() {
