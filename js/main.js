@@ -1,6 +1,6 @@
 const game = {
-    userSequence: [], //array containing the user selected button
-    playSequence: [], //array containing simon random button
+    playerSequence: [], //array containing the user selected button
+    simonSequence: [], //array containing simon(computer) random button
     numLevels: 20
 
 };
@@ -33,7 +33,7 @@ let error =false;
 $(document).ready(function () {
     $(".start").click(function () {
         level++;
-       playSequence(); //start
+      simonSequence(); //start
 
     })
 //user button listner //
