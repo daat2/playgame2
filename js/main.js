@@ -1,7 +1,8 @@
 const game = {
     playerSequence: [], //array containing the user selected button
     simonSequence: [], //array containing simon(computer) random button
-    numLevels: 20
+    numLevels: 20,  //gave max level
+    turn : 0, // current turn
 
 };
 const boardSound = [
@@ -19,118 +20,66 @@ const start = document.querySelector('.start');
 const strict = document.querySelector('#strict');
 
 
-
-
-// start.addEventListener('click', (event) => { 
-//     $(".counter").text("01");
-/* 1 start board sequence */
-
-
 let id,color,level=0;
 
 let error =false;
 
-$(document).ready(function () {
-    $(".start").click(function () {
-        level++;
-      simonSequence(); //start
 
-    })
-//user button listner //
-$(".button").click(function(){
-    id =$(this).attr("id");
-    color =$(this).attr("class").split("")[1];
-    userSequence.push(id);
-    console.log (id+" "+color);
-    addClassSound(id,color);
+// function for button flash 
 
-    //check user sequence 
-//usercorrect
-    if (!checkUserSeq()) { 
-displayErr();
-userSequence =[];
-    }
-//check end of sequence
-    if (userSequence.lenght ==playSequence.lenght && userSeq.length<
-        numLevels){
-        level++;
-        userSequence=[];
-        playSequence=[];
 
-    }
-    // check for winners
-if (userSeq.length==numLevels) {
-    $(."display").text("win");
-}
+//  1 Start Simon Sequence 
+
+start.addEventListener('click', (event) => {
+    $(".counter").text("01") 
+  const newLocal = level++;
+  simonSequence=[];
+  playerSequence =[];
+    
+simonSequence ();
 })
 
-})
 
-//checking user sequence aginst playsequence
-
-function checkUserSeq () {
-    for(var i=0;1 < userSequenc.lenght; i++){
-        if (userSequence[i] != playSequence[i]){
-                return false;
+//Strict mode listener
+.mode addEventListener ('click' , (event) => {
+    if (strictButton.checked  == true) {
+        strict =true;
+    }else {
+           strict =false; 
+                   
         }
-    }
-    return true;
-}
+    
 
-//display error f
-function displayError() {
-console.log("Err");
-var count =0 ;
-var myError = setInterval(fuction(), {
-    $(".counter").text("Err"),
-        count++;
-}
-    if(count== 3){
-$(".counter").text(level);
-clearInterval();
-userSequenc=[]
-count=0;
- }
-}, 500);
-};
-
-/* 2 playSequence */
-function playSequence() { //start
-    console.log(level);
-    $(".counter").text(level);
-    // getRandomNumber();
-    var i = 0;
-    var myInterval = setInterval(function () {
-        id = playSequence[i];
-        color = $("#+id").attr("class").split(" ")[id];
-        console.log(id+" "+ color);
-        addClassSound(id, color);
-        i++;
-         if (i == playSequence.length)
-        i = 0;
-    clearInterval(myInterval);
-    }, 1000);
-
-   
-}
-/* 3 generate random number */
-function getRandomNumber() {
-    var random = math.floor(math.random() * 4);
-    playSequence.push(random);
-}
-/* class sound */
-function addClassSound(id, color) {
-    $("# +id ").addClassSound(color + ".active");
-    // playSound()
-    setTimeout(function () {
-        $("#+id").removeClass(Color + ".active");
-    },500);
-/* play board sound  */
-function playSound(id) {
-    var sound =new Audio(boardSound [id]);
-    sound.play();
-
-}
-}
+    });
 
 
+
+
+
+
+//     let number = generateRandomNumber()
+//     game.simonSequence.push(number)
+//     play(game.simonSequence)
+// });
+// function generateRandomNumber(){
+//     return Math.floor(Math.random() * 4)
+//     function derive(number){
+//     switch(number){
+//         case 0:
+//             return [blue, boardSound[0], "blue-active"]
+//         case 1:
+//             return [green, boardSound[1], "green-active"]
+//         case 2:
+//             return [orange, boardSound[2], "orange-active"]
+//         case 3:
+//             return [yellow, boardSound[3], "yellow-active"]
+//     }
+// }
+// function play(sequence){
+//     sequence.forEach(function (number) {
+//         let [button, sound, className] = derive(number)
+//         button.classList.add(className)
+//         new Audio(sound).play()
+//     })
+// }
+// };
