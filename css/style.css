@@ -149,7 +149,7 @@ width: 300px;
 
 
 
-.strict{
+.mode{
 text-align: center;
 margin: 0 auto;
 margin-left: 20px;
@@ -163,17 +163,17 @@ line-height: 55px;
 
 }
 
- .strict {
+ .Mode {
   background-color: whitesmoke
    
 
 }
 
- .switch-box {
-  margin-top: 10px;
+  .switch-box {
+  margin-top: 10px; 
 }
 
-.outter-switch {
+/* .outter-switch {
   border: solid 2px black;
   width:60px;
   height: 25px;
@@ -189,11 +189,11 @@ line-height: 55px;
   width: 30px;
   height: 25px;
   position: relative !important;
-}
-
-.inner-inactive {
-  background-color: black !important;
 } */
+
+/* .inner-inactive {
+  background-color: black !important;
+} */ */
 
 .icon{
 width: 25%;
